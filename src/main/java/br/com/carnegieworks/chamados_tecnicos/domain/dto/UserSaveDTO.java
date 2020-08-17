@@ -5,6 +5,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import br.com.carnegieworks.chamados_tecnicos.domain.enums.Role;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
 import lombok.EqualsAndHashCode;
@@ -19,7 +21,7 @@ public class UserSaveDTO {
 	
 	@NotBlank( message = "User name is required")
 	@Size(min = 5, message = "User name must be at least 5 letters")
-	private String name;
+	private String userName;
 	
 	@Email
 	private String email;
@@ -31,9 +33,12 @@ public class UserSaveDTO {
 	@NotNull( message = "Role is required")
 	private Role role;
 	
+	private String encryptPassword(String pwd) {
+		return DigestUtils.sha256Hex(pwd);
+	}
 	
 	public User TransformToUser() {
-		return new User(null, this.name, this.email, this.password, this.role);
+		return new User(null, this.userName, this.email, encryptPassword(this.password), this.role);
 		
 	}
 	

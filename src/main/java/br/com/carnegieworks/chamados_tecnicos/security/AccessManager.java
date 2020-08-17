@@ -23,7 +23,7 @@ public class AccessManager {
 				.getAuthentication()
 				.getPrincipal().toString();
 		
-		Optional<User> user = this.userRepository.findUserByEmail(username);
+		Optional<User> user = this.userRepository.findUserByUserName(username);
 
 		if (!user.isPresent()) throw new NotFoundException("There are not user with id = "+username);
 		return user.get().getId().equals(id);

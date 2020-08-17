@@ -111,7 +111,7 @@ public class UserController {
 	public ResponseEntity<UserLoginResponseDTO> login(@RequestBody @Valid UserLoginDTO user) {
 		
 		UsernamePasswordAuthenticationToken token = 
-				new UsernamePasswordAuthenticationToken(user.getEmail(),user.getPassword());
+				new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
 		
 		Authentication auth = this.authManager.authenticate(token);
 		

@@ -17,7 +17,7 @@ public class UserUpdateDTO {
 	
 	@NotBlank( message = "User name is required")
 	@Size(min = 5)
-	private String name;
+	private String userName;
 	
 	@Email
 	private String email;
@@ -27,7 +27,7 @@ public class UserUpdateDTO {
 	private String password;
 		
 	public User TransformToUser() {
-		return new User(null, this.name, this.email, this.password, null);
+		return new User(null, this.userName, this.email, this.password, null);
 	}
 	
 }

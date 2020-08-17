@@ -17,9 +17,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("SELECT DISTINCT u FROM users u WHERE u.email = ?1 AND u.password = ?2")
 	public Optional<User> login(String email, String password);
 
-	@Query("SELECT DISTINCT u FROM users u WHERE u.email = ?1")
-	public Optional<User> findUserByEmail(String email);
+//	@Query("SELECT DISTINCT u FROM users u WHERE u.email = ?1")
+//	public Optional<User> findUserByEmail(String email);
 	
+	@Query("SELECT DISTINCT u FROM users u WHERE u.userName = ?1")
+	public Optional<User> findUserByUserName(String userName);
+
 	//public Optional<User> findByEmail(String email);
 	
 	

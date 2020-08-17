@@ -42,7 +42,8 @@ public class User implements Serializable {
 
 	@Size(min = 5)
 	@NotBlank(message = "User name is required")
-	private String name;
+	@Column(name = "username", nullable = false)
+	private String userName;
 
 	@NotBlank(message = "Email is required")
 	@Email

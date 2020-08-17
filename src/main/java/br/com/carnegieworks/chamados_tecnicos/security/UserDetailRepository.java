@@ -9,5 +9,7 @@ import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
 
 @Repository
 public interface UserDetailRepository extends JpaRepository<User, Long> {
-	public Optional<User> findByEmail(String email);
+	//public Optional<User> findByEmail(String email);
+	public Optional<User> findByUserName(String userName);
+	
 }
