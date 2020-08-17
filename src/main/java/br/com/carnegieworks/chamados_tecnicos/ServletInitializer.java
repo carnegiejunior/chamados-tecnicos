@@ -1,4 +1,4 @@
-package br.com.carnegieworks;
+package br.com.carnegieworks.chamados_tecnicos;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

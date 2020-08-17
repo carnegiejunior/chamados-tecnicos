@@ -1,4 +1,4 @@
-package br.com.carnegieworks;
+package br.com.carnegieworks.chamados_tecnicos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
