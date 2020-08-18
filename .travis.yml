@@ -1,3 +1,4 @@
 language: java
 os: linux
+dist: ubuntu
 jdk: openjdk11
