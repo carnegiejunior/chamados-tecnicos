@@ -1,13 +1,15 @@
 package br.com.carnegieworks;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
+//@SpringBootTest
+@SpringBootApplication
 class ChamadosTecnicosApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
