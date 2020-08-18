@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

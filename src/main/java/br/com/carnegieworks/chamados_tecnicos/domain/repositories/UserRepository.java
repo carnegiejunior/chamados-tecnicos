@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.enums.Role;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

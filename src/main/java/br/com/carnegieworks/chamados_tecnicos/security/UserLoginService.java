@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.repositories.UserRepository;
 
 @Service

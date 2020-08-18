@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import br.com.carnegieworks.chamados_tecnicos.domain.exceptions.NotFoundException;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageModel;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageRequestModel;
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.repositories.UserRepository;
 
 @Service

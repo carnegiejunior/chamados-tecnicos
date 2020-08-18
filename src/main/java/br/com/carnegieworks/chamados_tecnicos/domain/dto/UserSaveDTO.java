@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import br.com.carnegieworks.chamados_tecnicos.domain.enums.Role;
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

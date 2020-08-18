@@ -32,7 +32,7 @@ import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserSaveDTO;
 import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserUpdateRoleDTO;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageModel;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageRequestModel;
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.services.UserService;
 import br.com.carnegieworks.chamados_tecnicos.security.JwtManager;
 

@@ -1,4 +1,4 @@
-package br.com.carnegieworks.chamados_tecnicos.domain.models;
+package br.com.carnegieworks.chamados_tecnicos.domain.models.entities;
 
 import java.io.Serializable;
 

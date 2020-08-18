@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.models.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.exceptions.NotFoundException;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
 import br.com.carnegieworks.chamados_tecnicos.domain.repositories.UserRepository;
 
 @Component("accessManager")
@@ -15,7 +15,6 @@ public class AccessManager {
 	
 	@Autowired
 	UserRepository userRepository;
-	
 
 	public boolean isOwner(Long id) {
 		String username = SecurityContextHolder
@@ -25,7 +24,7 @@ public class AccessManager {
 		
 		Optional<User> user = this.userRepository.findUserByUserName(username);
 
-		if (!user.isPresent()) throw new NotFoundException("There are not user with id = "+username);
+		if (!user.isPresent()) throw new NotFoundException(String.format("User %s not found!", username));
 		return user.get().getId().equals(id);
 	}
 	

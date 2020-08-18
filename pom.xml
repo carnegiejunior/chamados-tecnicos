@@ -9,7 +9,7 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.carnegieworks.chamados_tecnicos</groupId>
+	<groupId>br.com.carnegieworks.chamados_tecnicos.chamados_tecnicos</groupId>
 	<artifactId>chamados-tecnicos</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
