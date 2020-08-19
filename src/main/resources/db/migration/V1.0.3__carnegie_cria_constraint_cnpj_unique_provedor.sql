@@ -1,0 +1,1 @@
+alter table chamados_tecnicos.provedores add CONSTRAINT uq_provedores_cnpj UNIQUE (cnpj);

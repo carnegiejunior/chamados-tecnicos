@@ -26,10 +26,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserLoginDTO;
-import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserLoginResponseDTO;
-import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserSaveDTO;
-import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserUpdateRoleDTO;
+import br.com.carnegieworks.chamados_tecnicos.domain.dto.user.UserLoginDTO;
+import br.com.carnegieworks.chamados_tecnicos.domain.dto.user.UserLoginResponseDTO;
+import br.com.carnegieworks.chamados_tecnicos.domain.dto.user.UserSaveDTO;
+import br.com.carnegieworks.chamados_tecnicos.domain.dto.user.UserUpdateRoleDTO;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageModel;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageRequestModel;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;

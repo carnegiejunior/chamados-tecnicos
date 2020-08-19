@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.br.CNPJ;
 
@@ -21,6 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -37,13 +39,14 @@ public class Provedor implements Serializable {
 	@Id
 	private Long id;
 	
-	@NotBlank(message = "Nome do provedor é requerido")
+	@NotBlank(message = "{provedor.nome.required}")
+	@Size(min = 5, message = "{provedor.nome.not.less.than.five}")
 	@Column(name = "nome", nullable = false)
 	private String nome;
 	
-	@NotBlank(message = "CNPJ do provedor é requerido")
+	@NotBlank(message = "{provedor.cnpj.required}")
 	@Column(name = "cnpj", nullable = false)
-	@CNPJ(message = "Número de cnpj inválido")
+	@CNPJ(message = "{provedor.cnpj.invalid}")
 	private String cnpj;	
 	
 	@OneToMany(mappedBy = "provedor")

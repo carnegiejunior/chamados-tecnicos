@@ -12,47 +12,45 @@ import org.springframework.stereotype.Service;
 import br.com.carnegieworks.chamados_tecnicos.domain.exceptions.NotFoundException;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageModel;
 import br.com.carnegieworks.chamados_tecnicos.domain.models.PageRequestModel;
-import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.User;
-import br.com.carnegieworks.chamados_tecnicos.domain.repositories.UserRepository;
+import br.com.carnegieworks.chamados_tecnicos.domain.models.entities.Provedor;
+import br.com.carnegieworks.chamados_tecnicos.domain.repositories.ProvedorRepository;
 
 @Service
-public class UserService{
+public class ProvedorService {
 
 	@Autowired
-	UserRepository userRepository;
-	
-	
-	public User save(User user) {
-		return this.userRepository.save(user);
+	ProvedorRepository provedorRepository;
+
+	public Provedor save(Provedor provedor) {
+		return this.provedorRepository.save(provedor);
+
 	}
 
-	public User update(User user) {
-		return this.userRepository.save(user);
-	}
-	
-
-	public User getById(Long id) {
-		return this.userRepository.findById(id).orElseThrow(
-				()-> new NotFoundException("Usuário não encontrato com o id: "+id)
-				);
+	public Provedor update(Provedor provedor) {
+		return this.provedorRepository.save(provedor);
 	}
 
-	public Optional<User> getOptionalById(Long id) {
-		return this.userRepository.findById(id);
+	public Optional<Provedor> getById(Long id) {
+		return Optional.ofNullable(this.provedorRepository.findById(id)
+				.orElseThrow(() -> new NotFoundException(String.format("Provedor com id: %s não encontrado", id))));
 	}
 	
-	
-	public Optional<PageModel<User>> listAllOnLazyMode(Optional<PageRequestModel> optionalPageRequestModel){
+	public Optional<List<Provedor>> getAll() {
+		return Optional.ofNullable(this.provedorRepository.findAll());
 		
-		PageModel<User> pageModel = null;
+	}
+	
+	public Optional<PageModel<Provedor>> listAllOnLazyMode (Optional<PageRequestModel> optionalPageRequestModel) {
+		
+		PageModel<Provedor> pageModel = null;
 		PageRequestModel pageRequestModel = null;
 		Pageable objectPageable = null;
-		Page<User> page = null;
+		Page<Provedor> page = null;
 		
 		if (optionalPageRequestModel.isPresent()) {
 			pageRequestModel = optionalPageRequestModel.get();
 			objectPageable = PageRequest.of(pageRequestModel.getPage(), pageRequestModel.getSize());
-			page = this.userRepository.findAll(objectPageable);
+			page = this.provedorRepository.findAll(objectPageable);
 			pageModel = new PageModel<>(
 					(int) page.getTotalElements(),
 					page.getSize(),
@@ -61,19 +59,9 @@ public class UserService{
 		}
 		
 		return Optional.ofNullable(pageModel);
-	
+		
+		
 	}
-	
-	public List<User> getAll(){
-		return this.userRepository.findAll();
-	}
-	
-	
-	public int updateRole(User user) {
-		return this.userRepository.updateRole(user.getId(), user.getRole());
-	}
-
-	
 	
 	
 }

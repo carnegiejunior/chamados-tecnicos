@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import br.com.carnegieworks.chamados_tecnicos.domain.dto.UserLoginResponseDTO;
+import br.com.carnegieworks.chamados_tecnicos.domain.dto.user.UserLoginResponseDTO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;

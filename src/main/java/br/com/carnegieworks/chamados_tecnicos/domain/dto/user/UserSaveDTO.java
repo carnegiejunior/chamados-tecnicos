@@ -1,4 +1,4 @@
-package br.com.carnegieworks.chamados_tecnicos.domain.dto;
+package br.com.carnegieworks.chamados_tecnicos.domain.dto.user;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
